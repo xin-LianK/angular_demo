@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
@@ -13,6 +12,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path: 'account',
+    loadChildren: './account/account.module#AccountModule'
+  },
+  {
+    path: 'help',
+    loadChildren: './help/help.module#HelpModule'
   },
   {
     path: '**',
