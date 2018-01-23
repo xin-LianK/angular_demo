@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: './product/product.module#ProductModule'
   },
   {
+    path: 'last',
+    loadChildren: './last/last.module#LastModule'
+  },
+  {
     path: 'help',
     loadChildren: './help/help.module#HelpModule'
   },
