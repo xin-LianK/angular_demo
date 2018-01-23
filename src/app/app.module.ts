@@ -12,7 +12,7 @@ import { BrowserAnimationBuilder } from '@angular/platform-browser/animations/sr
 @NgModule({
   declarations: [
     AppComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
