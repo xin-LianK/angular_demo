@@ -1,0 +1,12 @@
+<h3 class="text-center">注册</h3>
+
+<form class="container" [formGroup]="registerForm" role="form" novalidate>
+
+  <div class="form-group">
+    <label for="username">用户名：</label>
+
+    <input formControlName="username" type="text" id="username" #username class="form-control">
+    <div *ngIf="formErrors.username" class="showerr alert alert-danger">{{ formErrors.username }}</div>
+  </div>
+
+</form>

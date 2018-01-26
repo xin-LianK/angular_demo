@@ -1,0 +1,9 @@
+form {
+  width: 90%;
+  max-width: 45em;
+  margin: auto;
+}
+
+.showerr {
+  white-space: pre-wrap;
+}
