@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { validateRex } from './validate-register';
 
 // 1. formBuilder 用来构建表单数据
@@ -20,8 +16,7 @@ export class RegisterComponent implements OnInit {
 
   // 定义表单
   registerForm: FormGroup;
-
-  // 表单验证不通过时显示的错误消息
+  // 表单验证不通过时显示的错误消息 （表单控件可能有多条验证规则，由不通过的验证说明构成一条错误消息）
   formErrors = {
     username: ''
   };
@@ -45,7 +40,7 @@ export class RegisterComponent implements OnInit {
     this.buildForm();
   }
 
-  // 构建表单方法
+  //  添加构建表单方法
   buildForm(): void {
     // 通过 formBuilder构建表单
     this.registerForm = this.fb.group({
@@ -95,7 +90,6 @@ export class RegisterComponent implements OnInit {
               // 把所有验证不通过项的说明文字拼接成错误消息
               this.formErrors[field] += messages[key] + '\n';
             }
-
           }
         }
       }
