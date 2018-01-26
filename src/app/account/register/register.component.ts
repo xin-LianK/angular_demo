@@ -3,11 +3,6 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  NgForm,
-  FormsModule,
-  ReactiveFormsModule,
-  FormControl,
-  FormGroupDirective
 } from '@angular/forms';
 import { validateRex } from './validate-register';
 
