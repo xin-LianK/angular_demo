@@ -1,0 +1,143 @@
+1.既然是表单，首先肯定需要<form></form>
+2.给form标签添加指令  [formGroup]="registerForm"
+            同时添加  formControlName = "username"
+3.导入关于Form的一些类   import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+            其中：
+                        1. formBuilder 用来构建表单数据
+                        2. formGroup 表示表单类型
+                        3. Validators 包含了表单内置的验证规则，如： Validators.required
+4.定义表单属性： registerForm: FromGroup;
+5.定义表单验证不通过时每一项显示的错误消息的一组对象
+        ```
+        formErrors = {
+        username: ''
+        };
+        ```
+6.为每一项验证规则定义验证失败时的说明文字（表单控件可能有多条验证规则，由不通过的验证说明构成一条错误消息）
+```
+validationMessage = {
+  'username': {
+    'minlength': '用户名长度最少为3个字符',
+    'maxlength': '用户名长度最多为10个字符',
+    'required': '请填写用户名'
+  }
+};
+```
+7.在构造函数中添加 fb 属性用来构建表单
+constructor(private fb: FormBuilder) { }
+8.添加构建表单的方法
+```
+    buildForm(): void {
+    // 通过 formBuilder构建表单
+    this.registerForm = this.fb.group({
+        /* 为 username 添加3项验证规则：
+        * 1.必填， 2.最大长度为10， 3.最小长度为3
+        * 其中第一个空字符串参数为表单的默认值
+        */
+        'username': [ '', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(3)
+        ]]
+    });
+```
+9.接下来我们添加一个方法用来更新错误信息
+```
+    onValueChanged(data?: any) {
+        // 如果表单不存在则返回
+        if (!this.registerForm) {
+            return;
+        };
+        // 获取当前的表单
+        const form = this.registerForm;
+
+        // 遍历错误消息对象
+        for (const field in this.formErrors) {
+            if(field){
+                // 清空当前的错误消息
+                this.formErrors[field] = '';
+                // 获取当前表单的控件
+                const control = form.get(field);
+
+                // 当前表单存在此空间控件 && 此控件没有被修改 && 此控件验证不通过
+                if (control && control.dirty && !control.valid) {
+                    // 获取验证不通过的控件名，为了获取更详细的不通过信息
+                    const messages = this.validationMessage[field];
+                    // 遍历当前控件的错误对象，获取到验证不通过的属性
+                    for (const key in control.errors) {
+                    // 把所有验证不通过项的说明文字拼接成错误消息
+                    this.formErrors[field] += messages[key] + '\n';
+                    }
+                }
+            }
+        }
+    }
+```
+10.下面只需要在表单构建结束后初始化错误消息，并且在每次表单数据更改时更新错误消息就可以了
+    在 buildForm 方法中添加如下代码
+```
+    // 每次表单数据发生变化的时候更新错误信息
+    this.registerForm.valueChanges
+        .subscribe(data => this.onValueChanged(data));
+
+    // 初始化错误信息
+    this.onValueChanged();
+```
+11.此时，我们已经很好的控制了错误信息，下面只需要在表单模版中添加错误信息的显示就可以了
+    在 input 标签下方添加如下代码：
+```
+    <div *ngIf="formErrors.username" class="showerr alert alert-danger" >{{ formErrors.username }}</div>
+```
+12.实现       自定义的表单      验证
+    接下来我们创建一个正则验证器，新建文件 validate-register.ts :
+
+```
+    import { ValidatorFn, AbstractControl } from '@angular/forms';
+
+    export function validateRex(type: string, validateRex: RegExp): ValidatorFn {
+      return (control: AbstractControl): {[key: string]: any} => {
+        // 获取当前控件的内容
+        const str = control.value;
+        // 设置我们自定义的验证类型
+        const res = {};
+        res[type] = {str}
+        // 如果验证通过则返回 null 否则返回一个对象（包含我们自定义的属性）
+        return validateRex.test(str) ? null : res;
+      }
+    }
+```
+13.下面我们在代码中导入此函数：
+```
+    import { validateRex } from './validate-register';`
+    修改 validationMessage 属性为：
+```
+14.```
+    // 为每一项表单验证添加说明文字
+    validationMessage = {
+      'username': {
+        'minlength': '用户名长度最少为3个字符',
+        'maxlength': '用户名长度最多为10个字符',
+        'required': '请填写用户名',
+        'notdown': '用户名不能以下划线开头',
+        'only': '用户名只能包含数字、字母、下划线'
+      }
+    };
+    ```
+15.修改 buildForm 方法：
+```
+    // 通过 formBuilder构建表单
+    this.registerForm = this.fb.group({
+      /* 为 username 添加 5 项验证规则：
+       * 1.必填， 2.最大长度为10， 3.最小长度为3， 4.不能以下划线开头， 5.只能包含数字、字母、下划线
+       * 其中第一个空字符串参数为表单的默认值
+      */
+      'username': [ '', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(3),
+        validateRex('notdown', /^(?!_)/),
+        validateRex('only', /^[1-9a-zA-Z_]+$/)
+      ]]
+    });
+```
+16.大问题，之后在谈，先下班
