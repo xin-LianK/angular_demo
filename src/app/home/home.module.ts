@@ -8,6 +8,8 @@ import { HomeComponent } from './home.component';
 import { IndexComponent } from './index/index.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ListComponent } from './list/list.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { ListComponent } from './list/list.component';
   declarations: [
     HomeComponent,
     IndexComponent,
-    ListComponent
-  ]
+    ListComponent,
+    HeroFormComponent,
+    HeroFormComponent
+]
 })
 export class HomeModule { }

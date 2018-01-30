@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Hero } from './../../hero';
 
 @Component({
   selector: 'app-list',
@@ -7,11 +8,17 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   // size: number | string;
+  title = 'what';
+  hero: Hero; // defined to demonstrate template context precedence
+  heroes: Hero[];
+  currentHero: Hero;
   @Input() size: number | string = 12;
   @Output() sizeChange = new EventEmitter<number>();
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
+    this.resetHeroes();
   }
 
   dec() {
@@ -23,5 +30,11 @@ export class ListComponent implements OnInit {
   resize(i: number) {
     this.size = Math.min(40, Math.max(8, + this.size + i));
     this.sizeChange.emit(this.size);
+  }
+
+  resetHeroes() {
+    this.heroes = Hero.heroes.map(hero => hero.clone());
+    this.currentHero = this.heroes[0];
+    this.hero = this.currentHero;
   }
 }

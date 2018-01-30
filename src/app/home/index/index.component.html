@@ -132,7 +132,8 @@ For example,
   </div>
 </div>
 
-<!-- <div class="btn-group">
+
+<div class="btn-group">
   <button class="btn" (click)="resetHeroes()">Reset</button>
   <button class="btn" (click)="changeIds()">Change</button>
   <button class="btn" (click)="clearTrackByCounts()">Clear</button>
@@ -140,12 +141,28 @@ For example,
 <div class="box">
   <div #noTrackBy *ngFor="let hero of heroes">{{hero.id}}</div>
   <div id="noTrackByCnt" *ngIf="heroesNoTrackByCount">
-     Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
+    Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
   </div>
-</div> -->
+</div>
 
 
+<div>
+  <label *ngFor="let h of heroes">
+    <input type="radio" name="heroes" [(ngModel)]="currentHero" [value]="h">{{h.name}}
+  </label>
+</div>
 
+<div [ngSwitch]="currentHero.emotion">
+  <div *ngSwitchCase="'happy'">Are you as confused as {{currentHero.name}}?</div>
+
+  <div *ngSwitchCase="'sad'">Are you as confused as {{currentHero.name}}?</div>
+
+  <div *ngSwitchCase="'confused'">Are you as confused as {{currentHero.name}}?</div>
+
+  <div *ngSwitchCase="'confused'">Are you as confused as {{currentHero.name}}?</div>
+  <div *ngSwitchDefault>Are you as confused as {{currentHero.name}}?</div>
+
+</div>
 
 <!-- *ngIf -->
 <div [class.hidden]="!isSpecial">1</div>

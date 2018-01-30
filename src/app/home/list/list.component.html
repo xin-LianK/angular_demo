@@ -5,3 +5,14 @@
     <label [style.font-size.px]="size">FontSize:{{size}}px</label>
   </div>
 </div>
+
+
+<div>Title through uppercase pipe: {{title | uppercase}}</div>
+<div>
+  Title through a pipe chain: {{title | uppercase | lowercase}}
+</div>
+<div>Birthdate: {{currentHero?.birthdate | date:'longDate'}}</div>
+
+<h1 class="text-info text-center">{{currentHero | json}}</h1>
+
+The current hero's name is {{currentHero?.name}}

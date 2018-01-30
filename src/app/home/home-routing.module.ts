@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { IndexComponent } from './index/index.component';
 import { ListComponent } from './list/list.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,11 @@ const routes: Routes = [
                 path: 'list',
                 component: ListComponent,
                 data: { title: '列表页' }
+            },
+            {
+                path: 'form',
+                component: HeroFormComponent,
+                data: { title: '表单页' }
             },
             {
                 path: '',
@@ -38,5 +44,6 @@ export class HomeRoutingModule { }
 export const routedComponents = [
     HomeComponent,
     IndexComponent,
-    ListComponent
+    ListComponent,
+    HeroFormComponent
 ];
