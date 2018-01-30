@@ -1,0 +1,7 @@
+button,div{
+    font-size: 30px;
+    text-align: center;
+}
+.delete{
+    text-decoration:line-through;
+}

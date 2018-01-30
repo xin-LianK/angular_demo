@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { IndexComponent } from './index/index.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
     {
@@ -13,6 +14,11 @@ const routes: Routes = [
                 path: 'index',
                 component: IndexComponent,
                 data: { title: '首页' }
+            },
+            {
+                path: 'list',
+                component: ListComponent,
+                data: { title: '列表页' }
             },
             {
                 path: '',
@@ -31,5 +37,6 @@ export class HomeRoutingModule { }
 
 export const routedComponents = [
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    ListComponent
 ];

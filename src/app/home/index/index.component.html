@@ -1,1 +1,170 @@
-<h3>123</h3>
+<a id="toc"></a>
+<h1>bootstrap</h1>
+<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+You can use the mark tag to
+<mark>highlight</mark> text.
+<del>This line of text is meant to be treated as deleted text.</del>.
+<s>This line of text is meant to be treated as no longer accurate.</s>
+<ins>This line of text is meant to be treated as an addition to the document.</ins>
+<u>This line of text will render as underlined</u>
+<strong>rendered as bold text</strong>
+<em>rendered as italicized text</em>
+An abbreviation of the word attribute is
+<abbr title="attribute">attr</abbr>
+<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>.is the best thing since sliced bread.
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in
+    <cite title="Source Title">Source Title</cite>
+  </footer>
+</blockquote>
+<blockquote class="blockquote-reverse">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in
+    <cite title="Source Title">Source Title</cite>
+  </footer>
+</blockquote>
+
+<ul class="list-unstyled">
+  <li>...</li>
+</ul>
+
+<dl class="dl-horizontal">
+  <dt>123</dt>
+  <dd>456</dd>
+</dl>
+For example,
+<code>&lt;section&gt;</code> should be wrapped as inline. To switch directories, type
+<kbd>cd</kbd> followed by the name of the directory.
+<br> To edit settings, press
+<kbd>
+  <kbd>ctrl</kbd> +
+  <kbd>,</kbd>
+</kbd>
+
+<pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+
+<samp>This text is meant to be treated as sample output from a computer program.</samp>
+
+
+<h1 [hidden]='what'>index</h1>
+<button [ngClass]="{'btn btn-success': what}">This is div-btn1</button>
+
+<button type="button" class="btn btn-primary" (click)="changeOff()">false</button>
+<button type="button" class="btn btn-danger" (click)="changeOn()">true</button>
+<button [attr.aria-label]="what">help</button>
+<div [class.text-success]="what">Special</div>
+<div [style.font-size]=" what ? '18px' : '30px' ">字体</div>
+<button class="btn btn-warning" [disabled]='what'>
+  Notification
+  <span class="badge badge-info">132</span>
+</button>
+
+
+<!-- ngClass -->
+<div class="bad curly special" [class]="test" [style.font-size.px]="what ? 20 : 30">Bad curly</div>
+<p class="text-center">NgClass</p>
+<div [class.what]="what"></div>
+<div class="text-center" [ngClass]="currentClasses">This is NgClass</div>
+<div class="special" [class.text-info]="!toggle">This one is not so special</div>
+<button type="button" (click)="toggleChange()" [class.btn-info]="!toggle" class="btn">toggle</button>
+
+
+
+<!-- ngmodel -->
+<input class="form-control" type="text" [value]="inputText" (input)="inputText=$event.target.value">
+<input class="form-control" type="text" [(ngModel)]="inputText">
+<p>{{inputText}}</p>
+
+<!-- *ngFor -->
+<button class="btn btn-danger" (click)="deleteHero()">delete Hero</button>
+
+<button class="btn " (click)="onSave($event)">save</button>
+
+<div class="context">
+  <p>list</p>
+  <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
+</div>
+
+<div class="list-group">
+  <label>saveable:
+    <input type="checkbox" [(ngModel)]="canSave">
+  </label>
+  <label>modedified:
+    <input type="checkbox" [(ngModel)]="!isUnchanged">
+  </label>
+  <label>special:
+    <input type="checkbox" [(ngModel)]="isSpecial">
+  </label>
+  <button class="btn btn-info" (click)="setCurrentClasses()">Refresh currentClasses</button>
+
+  <div [ngStyle]="currentClasses">
+    This div should be {{canSave? "" : "not"}} saveable,{{isUnchanged? "unchanged" : "modified"}} and,{{isSpecial? "" : "not"}}
+    special after clicking "Refresh".
+  </div>
+</div>
+
+<div class="list-group">
+  <table class="table">
+    <tr *ngFor="let hero of heroes">
+      <td>{{hero.id}}</td>
+      <td [ngClass]="delete" [style.text-decoration]="lineThrough">{{hero.name}}</td>
+      <td>
+        <a name="" id="" class="btn btn-primary" href="javascript:;" role="button" (click)="deleteThis()">delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="form-group">
+  <div class="form-group-item">
+    <input type="text" #phone>
+    <button class="btn btn-info" (click)="callPhone(phone.value)">Call </button>
+  </div>
+  <div class="form-group-item">
+    <input type="text" #fax>
+    <button class="btn btn-info" (click)="callFax(fax.value)">Fax </button>
+  </div>
+</div>
+
+<!-- <div class="btn-group">
+  <button class="btn" (click)="resetHeroes()">Reset</button>
+  <button class="btn" (click)="changeIds()">Change</button>
+  <button class="btn" (click)="clearTrackByCounts()">Clear</button>
+</div>
+<div class="box">
+  <div #noTrackBy *ngFor="let hero of heroes">{{hero.id}}</div>
+  <div id="noTrackByCnt" *ngIf="heroesNoTrackByCount">
+     Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
+  </div>
+</div> -->
+
+
+
+
+<!-- *ngIf -->
+<div [class.hidden]="!isSpecial">1</div>
+<div [class.hidden]="isSpecial">2</div>
+
+<div [style.display]="isSpecial ? 'block' : 'none' ">3</div>
+<div [style.display]="isSpecial ? 'none' : 'block' ">4</div>
+
+
+<!-- 类似于路由的指令，直接引用其他模块 -->
+<app-list [(size)]="fontSizePx"></app-list>
+<div [style.font-size.px]='fontSizePx'>Change Text</div>
+
+
+
+
+<!-- <div [ngStyle]="currentStyles">
+  This div is initially italic, normal weight, and extra large (24px).
+</div> -->
+<a class="to-toc" href="#toc">top</a>
+
+<a name="" id="" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link" href="#" role="button"></a>
