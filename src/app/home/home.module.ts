@@ -21,7 +21,6 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     HomeComponent,
     IndexComponent,
     ListComponent,
-    HeroFormComponent,
     HeroFormComponent
 ]
 })
