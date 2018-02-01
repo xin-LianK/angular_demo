@@ -30,6 +30,10 @@ const routes: Routes = [
     loadChildren: './help/help.module#HelpModule'
   },
   {
+    path: 'life',
+    loadChildren: './life/life.module#LifeModule'
+  },
+  {
     path: '**',
     loadChildren: './error/error.module#ErrorModule'
   }
