@@ -1,0 +1,17 @@
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background: white;
+  width: 16px;
+}

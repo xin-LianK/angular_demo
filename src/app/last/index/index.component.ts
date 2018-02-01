@@ -11,5 +11,12 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // var mySwiper = new Swiper('.swiper-container', {
+  //   direction: 'horizontal',
+  //   loop: true,
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     clickable: true,
+  //   },
+  // })
 }

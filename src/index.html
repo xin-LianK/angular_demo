@@ -9,11 +9,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style/swiper-4.1.0.min.css">
+  <script src="./assets/script/swiper-4.1.0.min.js"></script>
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
 
 <body>
   <app-root></app-root>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="../../../assets/img/1920-465.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="../../../assets/img/1920-465.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="../../../assets/img/1920-465.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="../../../assets/img/1920-465.jpg" alt="">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </body>
-
+<script>
+  var mySwiper = new Swiper('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  })
+</script>
 </html>
