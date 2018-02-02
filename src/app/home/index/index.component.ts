@@ -42,7 +42,6 @@ export class IndexComponent implements OnInit {
 
   deleteRequest = new EventEmitter<Hero>();
   lineThrough = '';
-
   canSave = true;
   isUnchanged = false;
   isSpecial = false;
