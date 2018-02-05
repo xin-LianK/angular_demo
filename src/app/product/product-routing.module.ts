@@ -17,6 +17,10 @@ const routes: Routes = [
       {
         path: 'category',
         component: CategoryComponent
+      },
+      {
+        path: '',
+        redirectTo: 'index',
       }
     ]
   },
