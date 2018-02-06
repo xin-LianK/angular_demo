@@ -1,29 +1,138 @@
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="../../../assets/img/1920-465.jpg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="../../../assets/img/1920-465.jpg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="../../../assets/img/1920-465.jpg" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img src="../../../assets/img/1920-465.jpg" alt="">
-    </div>
-  </div>
+<mat-card>
+  <mat-tab-group [selectedIndex]="2">
+    <mat-tab label="Breakfast">
+      <h3>Breakfast option</h3>
+      <p>Toast /w peanut butter</p>
+    </mat-tab>
+    <mat-tab label="Lunch">
+      <h3>Lunch option</h3>
+      <p>Club sandwich</p>
+    </mat-tab>
+    <mat-tab label="Dinner">
+      <h3>Dinner option</h3>
+      <p>Lasagna</p>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 
-  <div class="swiper-pagination"></div>
-</div>
-<!-- <script>
-  alert(1)
-  var mySwiper = new Swiper('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  })
-</script> -->
+<mat-card>
+  <button mat-button>All</button>
+  <button mat-raised-button>Of</button>
+  <button mat-raised-button color="primary">The</button>
+  <button mat-raised-button color="accent">Buttons</button>
+</mat-card>
+
+<mat-card>
+  <button mat-fab color="primary">
+    <mat-icon>send</mat-icon>
+  </button>
+  <button mat-mini-fab color="accent">
+    <mat-icon>send</mat-icon>
+  </button>
+</mat-card>
+
+<mat-card>
+  <mat-button-toggle-group>
+    <mat-button-toggle>Small</mat-button-toggle>
+    <mat-button-toggle>Medium</mat-button-toggle>
+    <mat-button-toggle>Large</mat-button-toggle>
+    <mat-button-toggle disabled>X-Large</mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+
+<mat-card>
+  <mat-button-toggle-group>
+    <mat-button-toggle value="good">
+      <mat-icon>thumb_down</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="bad">
+      <mat-icon>thumb_up</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+
+<mat-card>
+  <mat-checkbox indeterminate="isIndeterminate">
+    Inderterminate
+  </mat-checkbox>
+  <mat-checkbox [checked]="isChecked">
+    Checked already
+  </mat-checkbox>
+  <mat-checkbox>
+    Unchecked
+  </mat-checkbox>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
+    <mat-card-title>Cards are the best</mat-card-title>
+    <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://source.unsplash.com/random/800x600">
+  <mat-card-content>
+    <p>Something pretty...</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-grid-list cols="3">
+    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
+      John
+    </mat-grid-tile>
+    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
+      Paul
+    </mat-grid-tile>
+    <mat-grid-tile>
+      Ringo
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+<!-- <mat-card>
+  <mat-form-field>
+    <input mdInput placeholder="Your Text" dividerColor="accent">
+  </mat-form-field>
+</mat-card> -->
+
+<mat-card>
+  <mat-list>
+    <mat-list-item>
+      <img mat-list-avatar src="..." alt="Desc 1">
+      <h3 mat-line>Title 1</h3>
+      <p mat-line>
+        <span>An awesome description</span>
+      </p>
+    </mat-list-item>
+
+    <mat-list-item>
+      <img mat-list-avatar src="..." alt="Desc 2">
+      <h3 mat-line>Title 2</h3>
+      <p mat-line>
+        <span>Another awesome description</span>
+      </p>
+    </mat-list-item>
+
+    <mat-list-item>
+      <img mat-list-avatar src="..." alt="Desc 3">
+      <h3 mat-line>Title 3</h3>
+      <p mat-line>
+        <span>Yet another awesome description</span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-card>
+  <mat-slide-toggle>
+    Bacon
+  </mat-slide-toggle>
+
+  <mat-slide-toggle disabled>
+    Ham
+  </mat-slide-toggle>
+
+  <mat-slide-toggle [checked]="isChecked">
+    Chicken
+  </mat-slide-toggle>
+</mat-card>
