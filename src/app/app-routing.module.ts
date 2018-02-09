@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: './life/life.module#LifeModule'
   },
   {
+    path: 'bootstrap',
+    loadChildren: './ng-boot/ng-boot.module#NgBootModule'
+  },
+  {
     path: '**',
     loadChildren: './error/error.module#ErrorModule'
   }

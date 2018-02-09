@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-table-sort',
   templateUrl: './table-sort.component.html',
@@ -11,7 +15,9 @@ export class TableSortComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort) sort: MatSort;
-  constructor() { }
+  constructor(private title: Title, private route: ActivatedRoute) {
+    this.route.data.subscribe(d => { this.title.setTitle(d['title']) })
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }

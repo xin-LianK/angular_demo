@@ -12,7 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: 'index',
-        component: IndexComponent
+        component: IndexComponent,
+        data: { title: 'Material' }
       },
       {
         path: '',
@@ -21,11 +22,13 @@ const routes: Routes = [
       },
       {
         path: 'table',
-        component: TableComponent
+        component: TableComponent,
+        data: { title: '表格' }
       },
       {
         path: 'table-sort',
-        component: TableSortComponent
+        component: TableSortComponent,
+        data: { title: '可排序的表格' }
       },
     ]
   },

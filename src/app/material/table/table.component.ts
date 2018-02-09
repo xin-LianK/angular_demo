@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -12,12 +15,13 @@ export class TableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor() {
+  constructor(private title: Title, private route: ActivatedRoute) {
     const users: UserData[] = [];
     for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+    this.route.data.subscribe(d => { this.title.setTitle(d['title']) });
   }
   ngOnInit() {
   }

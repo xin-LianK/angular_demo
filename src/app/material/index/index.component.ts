@@ -1,4 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -14,7 +17,9 @@ export class IndexComponent implements OnInit {
   name: string;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) { }
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private route: ActivatedRoute, private title: Title) {
+    this.route.data.subscribe(d => { this.title.setTitle(d['title']) });
+  }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
