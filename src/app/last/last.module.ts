@@ -5,14 +5,23 @@ import { IndexComponent } from './index/index.component';
 import { LastRoutingModule } from './last.routing';
 import { MaterialModule } from '../material.module';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
     LastRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [LastComponent,
-    IndexComponent
-]
+    IndexComponent,
+    DialogComponent
+  ],
+  entryComponents: [
+    DialogComponent
+  ]
 })
 export class LastModule { }

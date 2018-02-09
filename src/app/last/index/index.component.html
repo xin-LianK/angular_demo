@@ -1,3 +1,79 @@
+<button mat-raised-button (click)="isLinear = false" id="toggle-linear">Enable linear mode</button>
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav opened mode="side">Start content</mat-sidenav>
+  <mat-sidenav opened mode="side" position="end">End content</mat-sidenav>
+  Implicit main content
+</mat-sidenav-container>
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+
+<ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose:
+    <i>{{animal}}</i>
+  </li>
+</ol>
+
+
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Input">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
 <mat-card>
   <mat-tab-group [selectedIndex]="2">
     <mat-tab label="Breakfast">
@@ -88,12 +164,6 @@
     </mat-grid-tile>
   </mat-grid-list>
 </mat-card>
-
-<!-- <mat-card>
-  <mat-form-field>
-    <input mdInput placeholder="Your Text" dividerColor="accent">
-  </mat-form-field>
-</mat-card> -->
 
 <mat-card>
   <mat-list>
