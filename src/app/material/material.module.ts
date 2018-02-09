@@ -8,6 +8,7 @@ import { MainMaterialModule } from '../main-material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { TableComponent } from './table/table.component';
+import { TableSortComponent } from './table-sort/table-sort.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { TableComponent } from './table/table.component';
   declarations: [MaterialComponent,
     IndexComponent,
     DialogComponent,
-    TableComponent
+    TableComponent,
+    TableSortComponent
 ],
   entryComponents: [
     DialogComponent

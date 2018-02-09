@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MaterialComponent } from './material.component';
 import { IndexComponent } from './index/index.component';
 import { TableComponent } from './table/table.component';
+import { TableSortComponent } from './table-sort/table-sort.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'table',
         component: TableComponent
+      },
+      {
+        path: 'table-sort',
+        component: TableSortComponent
       },
     ]
   },
