@@ -1,12 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { LastComponent } from './last.component';
+import { MaterialComponent } from './material.component';
 import { IndexComponent } from './index/index.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LastComponent,
+    component: MaterialComponent,
     children: [
       {
         path: 'index',
@@ -16,7 +17,11 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         redirectTo: 'index'
-      }
+      },
+      {
+        path: 'table',
+        component: TableComponent
+      },
     ]
   },
 ];
@@ -26,5 +31,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class LastRoutingModule { }
-export const LastRoutes = RouterModule.forChild(routes);
+export class MaterialRoutingModule { }
+export const MaterialRoutes = RouterModule.forChild(routes);

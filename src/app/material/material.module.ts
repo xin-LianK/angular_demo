@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LastComponent } from './last.component';
+import { MaterialComponent } from './material.component';
 import { IndexComponent } from './index/index.component';
-import { LastRoutingModule } from './last.routing';
-import { MaterialModule } from '../material.module';
+import { MaterialRoutingModule } from './material.routing';
+import { MainMaterialModule } from '../main-material.module';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    LastRoutingModule,
-    MaterialModule,
+    MaterialRoutingModule,
+    MainMaterialModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  declarations: [LastComponent,
+  declarations: [MaterialComponent,
     IndexComponent,
-    DialogComponent
-  ],
+    DialogComponent,
+    TableComponent
+],
   entryComponents: [
     DialogComponent
   ]
 })
-export class LastModule { }
+export class MaterialModule { }

@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule, NgModel } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from './material.module';
+import { MainMaterialModule } from './main-material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    MainMaterialModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
   ],

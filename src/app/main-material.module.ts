@@ -102,4 +102,4 @@ import {
         MatStepperModule,
     ]
 })
-export class MaterialModule { }
+export class MainMaterialModule { }

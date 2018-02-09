@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'last',
+    redirectTo: 'material',
     pathMatch: 'full'
   },
   {
@@ -22,8 +22,8 @@ const routes: Routes = [
     loadChildren: './product/product.module#ProductModule'
   },
   {
-    path: 'last',
-    loadChildren: './last/last.module#LastModule'
+    path: 'material',
+    loadChildren: './material/material.module#MaterialModule'
   },
   {
     path: 'help',

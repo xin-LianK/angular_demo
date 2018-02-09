@@ -34,6 +34,13 @@
   </mat-step>
 </mat-horizontal-stepper>
 
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
 <mat-sidenav-container class="example-container" *ngIf="shouldRun">
   <mat-sidenav opened mode="side">Start content</mat-sidenav>
   <mat-sidenav opened mode="side" position="end">End content</mat-sidenav>
