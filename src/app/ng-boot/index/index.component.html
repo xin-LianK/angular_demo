@@ -1,36 +1,86 @@
+<ngb-tabset>
+  <ngb-tab title="One">
+    <ng-template ngbTabContent>
+      <p>These tabs are displayed as pills...</p>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Two">
+    <ng-template ngbTabContent>
+      <p>Because default values have been customized.</p>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel title="Simple">
-        <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-        </ng-template>
-    </ngb-panel>
-    <ngb-panel>
-        <ng-template ngbPanelTitle>
-            <span>&#9733;
-                <b>Fancy</b> title &#9733;</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-        </ng-template>
-    </ngb-panel>
-    <ngb-panel title="Disabled" [disabled]="true">
-        <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-        </ng-template>
-    </ngb-panel>
+  <ngb-panel title="Simple">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+      non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+      aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+      beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+      craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
+      VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <span>&#9733;
+        <b>Fancy</b> title &#9733;</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+      non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+      aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+      beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+      craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
+      VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel title="Disabled" [disabled]="true">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+      non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+      aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+      beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+      craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
+      VHS.
+    </ng-template>
+  </ngb-panel>
 </ngb-accordion>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">简单的</button>
+
+<div class="flash right_flash">
+  <object data="http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_6.swf" name="_playerswf" id="main_whisper_swf" width="100%"
+    height="100%" type="application/x-shockwave-flash">
+    <param name="wmode" value="transparent">
+    <param name="allowScriptAccess" value="always">
+    <param name="flashvars" value="swfCall=%257B%257D">
+  </object>
+</div>
+
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_1.swf    报爱心
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_2.swf    棒棒糖
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_3.swf    飞吻
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_4.swf    勾引
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_5.swf    鲜花
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_6.swf    哭泣
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_7.swf    爱心
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_8.swf    花痴
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_9.swf    拥抱
+http://i.gtimg.cn/appimg/sweet/sc/interact/v2/swf/flash_10.swf   被咬

@@ -4,6 +4,7 @@ import { NgBootComponent } from './ng-boot.component';
 import { IndexComponent } from './index/index.component';
 import { NgBootRoutingModule } from './ng-boot.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EasyModalComponent } from './easy-modal/easy-modal.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   declarations: [NgBootComponent,
-    IndexComponent
-  ]
+    IndexComponent,
+    EasyModalComponent
+]
 })
 export class NgBootModule { }
