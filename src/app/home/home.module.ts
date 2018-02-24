@@ -10,7 +10,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { ListComponent } from './list/list.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +21,6 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     IndexComponent,
     ListComponent,
     HeroFormComponent
-]
+  ]
 })
 export class HomeModule { }

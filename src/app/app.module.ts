@@ -10,11 +10,13 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MainMaterialModule } from './main-material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReverseStrPipe } from './reverse-str.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+    ReverseStrPipe
+],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
