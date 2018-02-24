@@ -1,3 +1,9 @@
 <router-outlet></router-outlet>
 <h1>{{title | uppercase}}</h1>
 <h1>{{ title | user:"Mr.":"the great" }}</h1>
+
+<h1 class="text-info">服务</h1>
+<input type="number" #qty placeholder="How many bags?">
+<button type="button" (click)="cookIt(qty.value)">
+    Cook it!
+</button>

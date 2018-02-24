@@ -92,6 +92,13 @@ For example,
   <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
 </div>
 
+<div class="context" style="margin:50px 0;">
+  <h1 class="text-info">ngFor</h1>
+  <li class="text-info" *ngFor="let hero of heroes; let i = index let odd = odd" [class.odd]="odd">{{i + 1}}. {{hero.name}}</li>
+</div>
+
+
+
 <div class="list-group">
   <label>saveable:
     <input type="checkbox" [(ngModel)]="canSave">

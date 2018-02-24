@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PopcornService } from './popcorn.service';
 @Component({
   selector: 'app-help',
   templateUrl: './help.component.html',
-  styleUrls: ['./help.component.css']
+  styleUrls: ['./help.component.css'],
+  providers: [PopcornService]
 })
 export class HelpComponent implements OnInit {
   title = "what";
-  constructor() { }
+  constructor(private popcorn: PopcornService) { }
 
   ngOnInit() {
+  }
+
+  cookIt(qty) {
+    this.popcorn.cookPopcorn(qty);
   }
 
 }
