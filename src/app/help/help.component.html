@@ -1,9 +1,28 @@
-<router-outlet></router-outlet>
 <h1>{{title | uppercase}}</h1>
 <h1>{{ title | user:"Mr.":"the great" }}</h1>
 
 <h1 class="text-info">服务</h1>
 <input type="number" #qty placeholder="How many bags?">
 <button type="button" (click)="cookIt(qty.value)">
-    Cook it!
+  Cook it!
 </button>
+
+<br />
+<br />
+<br />
+
+<h1 class="text-info">局部路由</h1>
+<div class="btn-group">
+  <button class="btn btn-lg" routerLink='/help/about'>
+    跳转到
+    <span class="badge badge-primary">about</span>
+  </button>
+  <button class="btn btn-lg" routerLink='/help/qaq'>
+    飞到
+    <span class="badge badge-success">qaq</span>
+  </button>
+</div>
+<div class="container">
+    这是哪里？
+  <router-outlet></router-outlet>
+</div>
