@@ -7,7 +7,9 @@ import { PopcornService } from './popcorn.service';
   providers: [PopcornService]
 })
 export class HelpComponent implements OnInit {
-  title = "what";
+  title = "what the fuck";
+  price = "100";
+  someDate = '1980-12-30';
   constructor(private popcorn: PopcornService) { }
 
   ngOnInit() {

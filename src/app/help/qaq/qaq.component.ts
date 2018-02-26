@@ -10,6 +10,7 @@ import { Subject } from 'rxjs/Subject';
 })
 export class QaqComponent implements OnInit {
   results: Object;
+  price: 100;
   searchTerm$ = new Subject<string>();
   constructor(private search: SerachService) {
     this.search.search(this.searchTerm$)
