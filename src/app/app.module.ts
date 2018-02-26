@@ -16,10 +16,9 @@ import { ReverseStrPipe } from './reverse-str.pipe';
   declarations: [
     AppComponent,
     ReverseStrPipe
-],
+  ],
   imports: [
     AppRoutingModule,
-    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -1,1 +1,14 @@
-<h1>局部路由about</h1>
+<h1 class="text-center">局部路由about</h1>
+
+
+<div class="container text-center box">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"  #itemInput (keyup.enter)="addItem(itemInput.value); itemInput.value=''" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <span class="input-group-text" id="basic-addon2" (click)="addItem(itemInput.value); itemInput.value=''">Add</span>
+    </div>
+  </div>
+  <ul *ngIf="items">
+    <li class="btn btn-lg" *ngFor="let item of items" (click)="removeItem(item)" [@itemAnim]>{{ item }}</li>
+  </ul>
+</div>
