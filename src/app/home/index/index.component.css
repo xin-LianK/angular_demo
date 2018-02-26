@@ -8,3 +8,31 @@ button,div{
 *{
     list-style: none;
 }
+.what-one{
+    font-size:20px;
+    color: red;
+}
+.what-two :host {
+  font-size: 20px;
+  color: blue;
+}
+:host(.what-three) {
+  font-size: 20px;
+  color: yellow;
+}
+
+:host-context(.deep-purple) span.info {
+  border: 3px solid hotpink;
+  border-radius: 12px;
+}
+
+::ng-deep span.info {
+  border: 3px solid hotpink;
+  border-radius: 12px;
+}
+
+:host-context(.deep-purple) ::ng-deep span.info {
+  border: 3px solid hotpink;
+  border-radius: 12px;
+}
+
