@@ -1,5 +1,5 @@
-
-<a id="toc"></a>
+<a id="toc">
+</a>
 <h1>bootstrap</h1>
 <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
 <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
@@ -193,3 +193,17 @@ For example,
 <a class="to-toc" href="#toc">top</a>
 
 <a name="" id="" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link" href="#" role="button"></a>
+
+
+<p [style.background-color]='"darkorchid"'>background</p>
+
+<p [style.font-size.em]='"3"'>Font size</p>
+
+<p [style.font-size.px]='important ?"30":"40"' (click)="importantClick()">Font-size</p>
+
+<p [ngStyle]="mystyles">mystyles</p>
+
+<p [ngStyle]="{ 'background-color': 'red', 'font-size':'50px', 'font-weight':'bold' }">mystyles22</p>
+
+<p [ngStyle]="setMystyles()">setMystyles</p>
+<button class="btn btn-info" (click)="setMystyles()">setMystyles</button>

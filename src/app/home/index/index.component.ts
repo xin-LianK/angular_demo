@@ -46,6 +46,13 @@ export class IndexComponent implements OnInit {
   isUnchanged = false;
   isSpecial = false;
 
+  important = true;
+
+  mystyles = {
+    'background-color': 'lime',
+    'font-size':'50px',
+    'font-weight':'bold'
+  }
   // ngClass
   currentClasses: {};
   setCurrentClasses() {
@@ -125,6 +132,16 @@ export class IndexComponent implements OnInit {
   deleteThis() {
     this.deleteRequest.emit(this.hero);
     this.lineThrough = this.lineThrough ? '' : 'line-through';
+  }
+  importantClick(){
+    this.important = !this.important;
+  }
+
+  setMystyles(){
+    let styles = {
+      'color': this.important?'red':'blue',
+      'font-size': '20px'
+    }
   }
 }
 function trackChanges(views: QueryList<ElementRef>, changed: () => void) {
