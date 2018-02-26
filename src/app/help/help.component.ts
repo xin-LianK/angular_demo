@@ -12,6 +12,8 @@ export class HelpComponent implements OnInit {
   price = "100";
   someDate = '1980-12-30';
   fruits = ['banana', 'oranges', 'apple', 'kiwis'];
+  currentStory: string = 'The Fox Without a Tail';
+  mainCharacter: string = 'Henry';
   constructor(private popcorn: PopcornService) { }
 
   ngOnInit() {

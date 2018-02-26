@@ -5,6 +5,7 @@ import { QaqComponent } from './qaq/qaq.component';
 import { AboutComponent } from './about/about.component';
 import { HelpRoutingModule } from './help-routing.module';
 import { UserPipe } from './user.pipe';
+import { ContantComponent } from './contant/contant.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { UserPipe } from './user.pipe';
     HelpComponent,
     QaqComponent,
     AboutComponent,
-    UserPipe
+    UserPipe,
+    ContantComponent
 ]
 })
 export class HelpModule { }

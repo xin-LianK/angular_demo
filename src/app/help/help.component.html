@@ -1,3 +1,27 @@
+<h1 class="text-info">
+  局部路由</h1>
+<div class="btn-group">
+  <button class="btn btn-lg" routerLink='/help/about'>
+    跳转到
+    <span class="badge badge-primary">about</span>
+  </button>
+  <button class="btn btn-lg" routerLink='/help/qaq'>
+    飞到
+    <span class="badge badge-success">qaq</span>
+  </button>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+<br />
+<br />
+<br />
+
+<app-contant [story]="currentStory" [character]="mainCharacter"></app-contant>
+
+
 <h1>{{title | uppercase}}</h1>
 <h1>{{title | lowercase}}</h1>
 <h1>{{ title | user:"Mr.":"the great" }}</h1>
@@ -23,21 +47,3 @@
   Cook it!
 </button>
 
-<br />
-<br />
-<br />
-
-<h1 class="text-info">局部路由</h1>
-<div class="btn-group">
-  <button class="btn btn-lg" routerLink='/help/about'>
-    跳转到
-    <span class="badge badge-primary">about</span>
-  </button>
-  <button class="btn btn-lg" routerLink='/help/qaq'>
-    飞到
-    <span class="badge badge-success">qaq</span>
-  </button>
-</div>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
