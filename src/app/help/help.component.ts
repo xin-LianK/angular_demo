@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopcornService } from './popcorn.service';
+import * as _ from "lodash";
 @Component({
   selector: 'app-help',
   templateUrl: './help.component.html',
@@ -10,9 +11,11 @@ export class HelpComponent implements OnInit {
   title = "what the fuck";
   price = "100";
   someDate = '1980-12-30';
+  fruits = ['banana', 'oranges', 'apple', 'kiwis'];
   constructor(private popcorn: PopcornService) { }
 
   ngOnInit() {
+    console.log(_.chunk(this.fruits, 2));
   }
 
   cookIt(qty) {

@@ -3,7 +3,7 @@
 <h1>{{ title | user:"Mr.":"the great" }}</h1>
 <h1 class="text-center text-info">1. 第一个参数是一个包含本地货币代码的字符串。 {{price | currency:'CAD'}}</h1>
 <h1 class="text-center text-info">2. 第二个可能的参数是一个布尔值来显示将显示货币符号或货币代码。默认值为false并显示货币代码。 {{price | currency:'USD':true}}</h1>
-<h1 class="text-center text-info">3. 第三种可能是格式化十进制管道格式的字符串 {{price | currency:'EUR':false:3.2-2}}</h1>
+<!-- <h1 class="text-center text-info">3. 第三种可能是格式化十进制管道格式的字符串 {{price | currency:'EUR':false:3.2-2}}</h1> -->
 
 <h2 class="text-center text-danger"> {{someDate | date:'medium'}}</h2>
 <h2 class="text-center text-danger"> {{someDate | date:'fullDate'}}</h2>
