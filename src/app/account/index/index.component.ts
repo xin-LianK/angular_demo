@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
+  htmlStr: string = 'This is a &amp; <strong>HtmlString</strong>'
   constructor() { }
 
   ngOnInit() {
