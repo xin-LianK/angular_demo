@@ -54,6 +54,12 @@ export class IndexComponent implements OnInit {
     'font-weight':'bold'
   }
   // ngClass
+  myClasses = {
+    important: this.important,
+    inactive: !this.isUnchanged,
+    saved: this.isSpecial,
+    long: this.name.length > 6
+  }
   currentClasses: {};
   setCurrentClasses() {
     this.currentClasses = {
