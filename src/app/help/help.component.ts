@@ -14,12 +14,16 @@ export class HelpComponent implements OnInit {
   fruits = ['banana', 'oranges', 'apple', 'kiwis'];
   currentStory: string = 'The Fox Without a Tail';
   mainCharacter: string = 'Henry';
+  outputStr: string = '';
   constructor(private popcorn: PopcornService) { }
 
   ngOnInit() {
     console.log(_.chunk(this.fruits, 2));
   }
 
+  getOutputStr(outputStr) {
+    this.outputStr = outputStr;
+  }
   cookIt(qty) {
     this.popcorn.cookPopcorn(qty);
   }

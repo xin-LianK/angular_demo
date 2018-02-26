@@ -19,8 +19,8 @@
 <br />
 <br />
 
-<app-contant [story]="currentStory" [character]="mainCharacter"></app-contant>
-
+<app-contant [story]="currentStory" [character]="mainCharacter" (selectStory)="getOutputStr($event)"></app-contant>
+<div class="text-info text-center">{{outputStr}}</div>
 
 <h1>{{title | uppercase}}</h1>
 <h1>{{title | lowercase}}</h1>
@@ -46,4 +46,3 @@
 <button type="button" (click)="cookIt(qty.value)">
   Cook it!
 </button>
-
