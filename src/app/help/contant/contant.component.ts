@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core'; //++ 组件与angular输出的交互
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-contant',
   templateUrl: './contant.component.html',
   styleUrls: ['./contant.component.css']
 })
+
 export class ContantComponent implements OnInit {
   OutputStr: string;
   @Input() story: string;

@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { HelpRoutingModule } from './help-routing.module';
 import { UserPipe } from './user.pipe';
 import { ContantComponent } from './contant/contant.component';
+import { ShadowDirective } from './shadow.directive';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ContantComponent } from './contant/contant.component';
     QaqComponent,
     AboutComponent,
     UserPipe,
-    ContantComponent
+    ContantComponent,
+    ShadowDirective
 ]
 })
 export class HelpModule { }
