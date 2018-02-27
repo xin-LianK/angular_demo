@@ -33,13 +33,19 @@ export class AboutComponent implements OnInit {
   }
 
   addItem(value: string) {
-    if(value === ''){
+    if (value === '') {
       return;
     }
     this.items.push(value);
   }
   removeItem(value) {
     let index = this.items.indexOf(value);
-    this.items.splice(index,1);
+    this.items.splice(index, 1);
+  }
+  animStart(event) {
+    console.log('start');
+  }
+  animEnd(event) {
+    console.log('end');
   }
 }

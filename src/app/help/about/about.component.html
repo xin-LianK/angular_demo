@@ -9,6 +9,10 @@
     </div>
   </div>
   <ul *ngIf="items">
-    <li class="btn btn-lg" *ngFor="let item of items" (click)="removeItem(item)" [@itemAnim]>{{ item }}</li>
+    <li class="btn btn-lg" *ngFor="let item of items"
+    (click)="removeItem(item)"
+    [@itemAnim]
+    (@itemAnim.start)="animStart($event)"
+    (@itemAnim.done)="animEnd($event)">{{ item }}</li>
   </ul>
 </div>
