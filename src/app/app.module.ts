@@ -15,6 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReverseStrPipe } from './reverse-str.pipe';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+import { ReactiveFormsModule } from '@angular/forms';  // <-- 使用FormControl必须 import module
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MainMaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
   ],
   exports: [NgbModule],
