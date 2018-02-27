@@ -18,3 +18,23 @@
 
 <br />
 <br />
+
+<div class="container">
+  <p>ngOnChanges：每次数据绑定的输入属性更改时调用。它在ngOnInit钩子之前第一次被调用。该钩子接收一个SimpleChanges对象，该对象包含数据绑定输入属性的先前值和当前值。这个钩子经常被调用，所以限制它的处理量是个好主意。</p>
+  <br />
+  <p>ngOnInit：在组件初始化时调用一次。 </p>
+  <br />
+  <p>ngDoCheck：使用此钩子而不是ngOnChanges来处理Angular未检测到的更改。它在每个变化检测周期都被调用，所以保持它的最小值对性能很重要。</p>
+  <br />
+  <p>ngAfterContentInit：在内容投影到组件后调用。</p>
+  <br />
+  <p>ngAfterContentChecked：在检查投影内容后调用。</p>
+  <br />
+  <p>ngAfterViewInit：在组件的视图或子视图初始化后调用。</p>
+  <br />
+  <p>ngAfterViewChecked：在检查组件的视图或子视图后调用。</p>
+  <br />
+  <p>ngOnDestroy：当组件被销毁时调用一次，并且用于清理和取消订阅observable的钩子。
+    <br />
+    <br />
+</div>
