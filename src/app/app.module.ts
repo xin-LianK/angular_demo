@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,6 +14,7 @@ import { MainMaterialModule } from './main-material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReverseStrPipe } from './reverse-str.pipe';
 import { FlexLayoutModule } from "@angular/flex-layout";
+
 
 @NgModule({
   declarations: [
