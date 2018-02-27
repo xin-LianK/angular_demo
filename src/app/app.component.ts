@@ -9,8 +9,5 @@ import { FormControl } from '@angular/forms';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  panelColor = new FormControl('blue');
-  constructor() {
-    console.log(this.panelColor.value);
-  }
+  panelColor = new FormControl('Router');
 }

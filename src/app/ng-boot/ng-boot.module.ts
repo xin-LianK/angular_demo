@@ -5,6 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { NgBootRoutingModule } from './ng-boot.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EasyModalComponent } from './easy-modal/easy-modal.component';
+import { ContantComponent } from './contant/contant.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { EasyModalComponent } from './easy-modal/easy-modal.component';
   ],
   declarations: [NgBootComponent,
     IndexComponent,
-    EasyModalComponent
+    EasyModalComponent,
+    ContantComponent
 ]
 })
 export class NgBootModule { }
