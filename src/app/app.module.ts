@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { MainMaterialModule } from './main-material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReverseStrPipe } from './reverse-str.pipe';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReverseStrPipe } from './reverse-str.pipe';
     HttpModule,
     MainMaterialModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     NgbModule.forRoot(),
   ],
   exports: [NgbModule],
