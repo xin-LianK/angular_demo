@@ -1,1 +1,12 @@
+<div class="container">
+  <h1>Your Emoji</h1>
+  <div *ngIf="selectedEmoji">{{ selectedEmoji }}</div>
+  <button mat-raised-button (click)="openEmojiDialog()">
+    Make a selection
+  </button>
+</div>
+<br />
+<br />
+<br />
+<br />
 <router-outlet></router-outlet>

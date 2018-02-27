@@ -9,7 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { TableComponent } from './table/table.component';
 import { TableSortComponent } from './table-sort/table-sort.component';
-
+import { ChooseEmojiComponent } from './choose-emoji/choose-emoji.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,10 +22,12 @@ import { TableSortComponent } from './table-sort/table-sort.component';
     IndexComponent,
     DialogComponent,
     TableComponent,
-    TableSortComponent
-],
+    TableSortComponent,
+    ChooseEmojiComponent
+  ],
   entryComponents: [
-    DialogComponent
+    DialogComponent,
+    ChooseEmojiComponent
   ]
 })
 export class MaterialModule { }
