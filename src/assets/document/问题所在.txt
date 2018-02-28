@@ -2,3 +2,4 @@
 2. lodash   数组的操作
 3. angular 中 Rx   Observable
 4. 自定义管道全局使用
+5. Observable中的delay不能使用

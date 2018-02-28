@@ -1,3 +1,34 @@
+<h1>Material主题</h1>
+<mat-card>
+  Main Theme:
+  <button mat-raised-button color="primary">
+    Primary
+  </button>
+  <button mat-raised-button color="accent">
+    Accent
+  </button>
+  <button mat-raised-button color="warn">
+    Warning
+  </button>
+</mat-card>
+
+<mat-card class="alternate-theme">
+  Alternate Theme:
+  <button mat-raised-button color="primary">
+    Primary
+  </button>
+  <button mat-raised-button color="accent">
+    Accent
+  </button>
+  <button mat-raised-button color="warn">
+    Warning
+  </button>
+</mat-card>
+
+<br />
+<br />
+<br />
+
 <button mat-raised-button (click)="isLinear = false" id="toggle-linear">Enable linear mode</button>
 
 <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
