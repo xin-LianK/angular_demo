@@ -16,13 +16,15 @@ import { ReverseStrPipe } from './reverse-str.pipe';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { ReactiveFormsModule } from '@angular/forms';  // <-- 使用FormControl必须 import module
+import { CapitalizePipe } from './capitalize.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReverseStrPipe
-  ],
+    ReverseStrPipe,
+    CapitalizePipe
+],
   imports: [
     AppRoutingModule,
     BrowserModule,
