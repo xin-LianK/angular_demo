@@ -35,27 +35,36 @@
       </mat-select>
     </mat-form-field>
   </div>
-<div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
+  <div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
     <mat-form-field>
-        <mat-select placeholder="Product" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
-            <mat-option value="red" routerLink="./product/index">Index</mat-option>
-            <mat-option value="green" routerLink="./product/category">Category</mat-option>
-            <!-- <mat-option value="blue">table-sort</mat-option> -->
-        </mat-select>
+      <mat-select placeholder="Product" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
+        <mat-option value="red" routerLink="./product/index">Index</mat-option>
+        <mat-option value="green" routerLink="./product/category">Category</mat-option>
+        <!-- <mat-option value="blue">table-sort</mat-option> -->
+      </mat-select>
     </mat-form-field>
-</div>
-<div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
+  </div>
+  <div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
     <mat-form-field>
-        <mat-select placeholder="Life" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
-            <mat-option value="red" routerLink="./life/spy">Spy</mat-option>
-            <mat-option value="green" routerLink="./life/change">Change</mat-option>
-            <!-- <mat-option value="blue">table-sort</mat-option> -->
-        </mat-select>
+      <mat-select placeholder="Life" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
+        <mat-option value="red" routerLink="./life/spy">Spy</mat-option>
+        <mat-option value="green" routerLink="./life/change">Change</mat-option>
+        <!-- <mat-option value="blue">table-sort</mat-option> -->
+      </mat-select>
     </mat-form-field>
-</div>
+  </div>
   <div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
     <mat-form-field>
       <mat-select placeholder="Help" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
+        <mat-option value="red" routerLink="./help/login">About</mat-option>
+        <mat-option value="green" routerLink="./help/login">Contant</mat-option>
+        <mat-option value="blue" routerLink="./help/login">Qaq</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="list-group-item col-xl col-lg-1 col-md-6 col-sm">
+    <mat-form-field>
+      <mat-select placeholder="Erro" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
         <mat-option value="red" routerLink="./help/login">About</mat-option>
         <mat-option value="green" routerLink="./help/login">Contant</mat-option>
         <mat-option value="blue" routerLink="./help/login">Qaq</mat-option>
