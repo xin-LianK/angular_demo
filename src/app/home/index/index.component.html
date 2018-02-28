@@ -85,7 +85,7 @@
   </div>
 </div>
 
-
+<!-- *ngIf -->
 <div class="btn-group">
   <button class="btn" (click)="resetHeroes()">Reset</button>
   <button class="btn" (click)="changeIds()">Change</button>
@@ -97,6 +97,31 @@
     Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
   </div>
 </div>
+
+<h1 class="text-dager text-center" *ngIf="important">important</h1>
+<h1 class="text-dager text-center" *ngIf="!important">No important</h1>
+
+<h2 *ngIf="important;else noImportant">template important</h2>
+<ng-template #noImportant>
+   template No important
+</ng-template>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="importantClick()">important button</button>
+
+<div *ngIf="things.car; else noCar; let car">
+  Nice {{ car }}!
+</div>
+<ng-template #noCar>
+  Call a Uber.
+</ng-template>
+
+<!-- <div *ngIf="thingss$ | async; else loading; let things">
+  Nice {{ things.watch }}! -->
+  <!-- Nice Timex! -->
+<!-- </div> -->
+<!-- <ng-template #loading> -->
+  <!-- Loading your things... -->
+<!-- </ng-template> -->
+
 
 
 <div>
@@ -117,7 +142,6 @@
 
 </div>
 
-<!-- *ngIf -->
 <div [class.hidden]="!isSpecial">1</div>
 <div [class.hidden]="isSpecial">2</div>
 

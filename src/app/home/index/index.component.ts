@@ -3,6 +3,10 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Hero } from '../../hero';
 import { Console } from '@angular/core/src/console';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+// import 'rxjs/add/observable/delay';
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -48,10 +52,22 @@ export class IndexComponent implements OnInit {
 
   important = true;
 
+  things = {
+    car: 'Honda',
+    shoes: 'Nike',
+    shirt: 'Tom Ford',
+    watch: 'Timex'
+  }
+  // thingss$ = Observable.of({
+  //   car: 'Honda',
+  //   shoes: 'Nike',
+  //   shirt: 'Tom Ford',
+  //   watch: 'Timex'
+  // }).delay(1000);
   mystyles = {
     'background-color': 'lime',
-    'font-size':'50px',
-    'font-weight':'bold'
+    'font-size': '50px',
+    'font-weight': 'bold'
   }
   // ngClass
   myClasses = {
@@ -139,13 +155,13 @@ export class IndexComponent implements OnInit {
     this.deleteRequest.emit(this.hero);
     this.lineThrough = this.lineThrough ? '' : 'line-through';
   }
-  importantClick(){
+  importantClick() {
     this.important = !this.important;
   }
 
-  setMystyles(){
+  setMystyles() {
     let styles = {
-      'color': this.important?'red':'blue',
+      'color': this.important ? 'red' : 'blue',
       'font-size': '20px'
     }
   }
