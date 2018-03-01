@@ -1,4 +1,9 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+
+import { ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { BaconDirective } from './bacon.directive';
+import { LoginComponent } from './account/login/login.component';
+
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,10 +25,24 @@ import { CapitalizePipe } from './capitalize.pipe';
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   panelColor = new FormControl('Router');
   data: string;
   isRoot: boolean;
+
+  extraIngredient: string;
+  @ViewChild(BaconDirective)
+  @ViewChild('someInput') someInput: ElementRef;
+  @ViewChild(LoginComponent) loginChild: LoginComponent;
+
+  set appBacon(directives: BaconDirective) {
+    this.extraIngredient = directives.ingredient;
+  }
+  ngAfterViewInit() {
+    this.someInput.nativeElement.value = "Anchvies! 🍕🍕"
+    // console.log(this.loginChild.whoIm());
+  }
+
   constructor(
     private capitalize: CapitalizePipe,
     private location: Location,

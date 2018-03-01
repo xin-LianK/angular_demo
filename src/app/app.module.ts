@@ -17,13 +17,15 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { ReactiveFormsModule } from '@angular/forms';  // <-- 使用FormControl必须 import module
 import { CapitalizePipe } from './capitalize.pipe';
+import { BaconDirective } from './bacon.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReverseStrPipe,
-    CapitalizePipe
+    ReverseStrPipe,
+    CapitalizePipe,
+    BaconDirective
 ],
   imports: [
     AppRoutingModule,
