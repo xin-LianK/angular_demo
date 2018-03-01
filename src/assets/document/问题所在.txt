@@ -1,5 +1,14 @@
 1. @Input
-2. lodash   Êý×éµÄ²Ù×÷
-3. angular ÖÐ Rx   Observable
-4. ×Ô¶¨Òå¹ÜµÀÈ«¾ÖÊ¹ÓÃ
-5. ObservableÖÐµÄdelay²»ÄÜÊ¹ÓÃ
+2. lodash   ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+3. angular ï¿½ï¿½ Rx   Observable
+4. ï¿½Ô¶ï¿½ï¿½ï¿½Üµï¿½È«ï¿½ï¿½Ê¹ï¿½ï¿½
+5. Observableï¿½Ðµï¿½delayï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
+
+
+
+
+
+
+
+
+-------.https://alligator.io/angular/async-pipe/
