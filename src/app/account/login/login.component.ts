@@ -10,8 +10,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  whoIm(){
+  onKeydown() {
+    console.log(event);
+  }
+  whoIm() {
     return '👶 I am a child!!';
   }
 }

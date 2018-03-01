@@ -1,3 +1,15 @@
-<p>
-  login works!
-</p>
+<input class="form-control" (keydown.enter)="onKeydown($event)">
+<input class="form-control" (keyup.control.1)="onKeydown($event)" placeholder="同时按下控件和1键时才会触发事件：">
+<input (keydown.a)="onKeydown($event)">
+<input (keydown.esc)="onKeydown($event)">
+<input (keydown.shift.esc)="onKeydown($event)">
+<input (keydown.control)="onKeydown($event)">
+<input (keydown.alt)="onKeydown($event)">
+<input (keydown.meta)="onKeydown($event)">
+<input (keydown.9)="onKeydown($event)">
+<input (keydown.tab)="onKeydown($event)">
+<input (keydown.backspace)="onKeydown($event)">
+<input (keydown.arrowup)="onKeydown($event)">
+<input (keydown.shift.arrowdown)="onKeydown($event)">
+<input (keydown.shift.control.z)="onKeydown($event)">
+<input (keydown.f4)="onKeydown($event)">
