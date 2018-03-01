@@ -87,6 +87,15 @@ export class AppComponent implements AfterViewInit {
   goPath() {
     this.location.go('https://www.baidu.com')
   }
+  linkPath() {
+    // 两者相同
+    this.router.navigate(['/', 'red-pill']).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
+    // this.router.navigateByUrl('/red-pill;x=white-rabbit/neo');
+  }
   // 更改为给定的URL，并替换历史记录中最顶端的URL。这使得如果用户返回，它将不会回到用户所在的URL，而是之前的那个
   rePath() {
     this.location.replaceState('https://www.google.com')
