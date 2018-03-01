@@ -1,15 +1,17 @@
 <input class="form-control" (keydown.enter)="onKeydown($event)">
 <input class="form-control" (keyup.control.1)="onKeydown($event)" placeholder="同时按下控件和1键时才会触发事件：">
-<input (keydown.a)="onKeydown($event)">
-<input (keydown.esc)="onKeydown($event)">
-<input (keydown.shift.esc)="onKeydown($event)">
-<input (keydown.control)="onKeydown($event)">
-<input (keydown.alt)="onKeydown($event)">
-<input (keydown.meta)="onKeydown($event)">
-<input (keydown.9)="onKeydown($event)">
-<input (keydown.tab)="onKeydown($event)">
-<input (keydown.backspace)="onKeydown($event)">
-<input (keydown.arrowup)="onKeydown($event)">
-<input (keydown.shift.arrowdown)="onKeydown($event)">
-<input (keydown.shift.control.z)="onKeydown($event)">
-<input (keydown.f4)="onKeydown($event)">
+<input class="form-control" (keydown.a)="onKeydown($event)">
+<input class="form-control" (keydown.esc)="onKeydown($event)">
+<input class="form-control" (keydown.shift.esc)="onKeydown($event)">
+<input class="form-control" (keydown.control)="onKeydown($event)">
+<input class="form-control" (keydown.alt)="onKeydown($event)">
+<input class="form-control" (keydown.meta)="onKeydown($event)">
+<input class="form-control" (keydown.9)="onKeydown($event)">
+<input class="form-control" (keydown.tab)="onKeydown($event)">
+<input class="form-control" (keydown.backspace)="onKeydown($event)">
+<input class="form-control" (keydown.arrowup)="onKeydown($event)">
+<input class="form-control" (keydown.shift.arrowdown)="onKeydown($event)">
+<input class="form-control" (keydown.shift.control.z)="onKeydown($event)">
+<input class="form-control" (keydown.f4)="onKeydown($event)">
+
+<a href="https://alligator.io/angular/change-detection-strategy/">这样做会指示Angular在这些组件及其子树上只有在传递新引用时才会对变化进行检测，而不是简单地对数据进行变异。</a>
