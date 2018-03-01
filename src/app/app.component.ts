@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, isDevMode } from '@angular/core';
 
 import { ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { BaconDirective } from './bacon.directive';
@@ -15,6 +15,8 @@ import { CapitalizePipe } from './capitalize.pipe';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/map';
+
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -47,9 +49,10 @@ export class AppComponent implements AfterViewInit {
     this.someInput.nativeElement.value = "Anchvies! 🍕🍕"
     // console.log(this.loginChild.whoIm());
   }
-
   time$ = Observable.interval(1000).map(val => new Date());
-  
+
+  animal: string = environment.animal;
+
   constructor(
     private capitalize: CapitalizePipe,
     private location: Location,
@@ -64,6 +67,13 @@ export class AppComponent implements AfterViewInit {
 
   // 监听url中的更改，并且如果用户位于根路径中
   ngOnInit() {
+
+    if (isDevMode()) {
+      console.log('👋 Development!');
+    } else {
+      console.log('💪 Production!');
+    }
+
     this.router.events.subscribe(event => {
       if (this.location.path() !== '') {
         this.isRoot = false;
