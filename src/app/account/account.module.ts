@@ -7,6 +7,7 @@ import { AccountRoutingModule } from './account-routing.module';
 import { RegisterComponent } from './register/register.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RainbowDirective } from './rainbow.directive';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     IndexComponent,
     LoginComponent,
     RegisterComponent,
-  ]
+    RainbowDirective
+]
 })
 export class AccountModule { }
