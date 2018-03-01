@@ -1,0 +1,6 @@
+<a [routerLink]="['/products']" [queryParams]="{ order: 'popular'}">
+  Products
+</a>
+<a [routerLink]="['/users']" [queryParams]="{ filter: 'new' }" queryParamsHandling="merge">
+  Users
+</a>

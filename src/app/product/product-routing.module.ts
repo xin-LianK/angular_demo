@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product.component';
 import { IndexComponent } from './index/index.component';
 import { CategoryComponent } from './category/category.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'category',
         component: CategoryComponent
+      },
+      {
+        path: 'list',
+        component: ListComponent
       },
       {
         path: '',
