@@ -1,1 +1,16 @@
 <router-outlet></router-outlet>
+<form [formGroup]="myForm">
+    <input type="text" formControlName="name">
+    <input type="email" formControlName="email">
+
+    <div *ngIf="myForm.get('email').status === 'PENDING'">
+        Checking...
+    </div>
+    <div *ngIf="myForm.get('email').status === 'VALID'">
+        😺 Email is available!
+    </div>
+
+    <div *ngIf="myForm.get('email').errors && myForm.get('email').errors.emailTaken">
+        😢 Oh noes, this email is already taken!
+    </div>
+</form>
