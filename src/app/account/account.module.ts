@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RainbowDirective } from './rainbow.directive';
+import { RatingInputComponent } from './rating-input/rating-input.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { RainbowDirective } from './rainbow.directive';
     IndexComponent,
     LoginComponent,
     RegisterComponent,
-    RainbowDirective
+    RainbowDirective,
+    RatingInputComponent
 ]
 })
 export class AccountModule { }

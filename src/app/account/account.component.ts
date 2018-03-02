@@ -8,7 +8,8 @@ import { ValidateEmailNotTaken } from './index/async-email.validator';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
+  providers: [SignupService]
 })
 export class AccountComponent implements OnInit {
   myForm: FormGroup

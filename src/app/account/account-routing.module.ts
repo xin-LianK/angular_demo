@@ -5,6 +5,7 @@ import { AccountComponent } from './account.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RatingInputComponent } from './rating-input/rating-input.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'rating',
+        component: RatingInputComponent
       }
     ]
   },
