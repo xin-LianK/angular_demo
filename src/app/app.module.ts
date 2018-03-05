@@ -22,6 +22,8 @@ import { GoWildDirective } from './go-wild.directive';
 
 import { CoreModule } from './core/core.module';
 
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [//这是为了指定应该是模块一部分的组件，管道和指令。
     AppComponent,
@@ -41,6 +43,7 @@ import { CoreModule } from './core/core.module';
     FlexLayoutModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    ChartsModule,
     // CoreModule.forRoot(),
   ],
   exports: [NgbModule],//如果您想导出模块的成员，以便它们可以在其他模块的组件模板中使用，则这些成员将进入exports数组。
