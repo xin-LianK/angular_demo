@@ -83,24 +83,46 @@
 <span appBacon>sandwich!</span>
 <input class="form-control" #someInput placeholder="Your favorite pizza toping">
 
-<div style="width:40%;">
-  <canvas baseChart [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"
-    (chartClick)="onChartClick($event)">
-   <!-- chartType  这设置图表的基本类型  值可以是pie, doughnut, bar, line, polarArea, radar or horizontalBar -->
-   <!-- legend     布尔值是否应显示在图表上方的图例。 -->
-   <!-- datasets   这应该是包含每个数据集的数据数组和标签的对象数组 -->
-   <!-- data       如果您的图表很简单并且只有一个数据集，则可以使用数据而不是数据集并传入数据点数组。 -->
-   <!-- labels     X轴的标签数组。 -->
-   <!-- options    包含图表选项的对象。有关可用选项的详细信息，请参阅官方的Chart.js文档。 在上例中，我们将图表设置为响应并根据视口大小进行调整。 -->
-   <!-- colors     但您可以使用颜色输入定义自己的颜色。传递一个包含以下值的对象文字数组： -->
-  </canvas>
-  <button (click)="newDataPoint([900, 50, 300], 'May')">
-    Add data point
-  </button>
+<div class="container">
+  <div style="width:40%;">
+    <canvas baseChart [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"
+      (chartClick)="onChartClick($event)">
+      <!-- chartType  这设置图表的基本类型  值可以是pie, doughnut, bar, line, polarArea, radar or horizontalBar -->
+      <!-- legend     布尔值是否应显示在图表上方的图例。 -->
+      <!-- datasets   这应该是包含每个数据集的数据数组和标签的对象数组 -->
+      <!-- data       如果您的图表很简单并且只有一个数据集，则可以使用数据而不是数据集并传入数据点数组。 -->
+      <!-- labels     X轴的标签数组。 -->
+      <!-- options    包含图表选项的对象。有关可用选项的详细信息，请参阅官方的Chart.js文档。 在上例中，我们将图表设置为响应并根据视口大小进行调整。 -->
+      <!-- colors     但您可以使用颜色输入定义自己的颜色。传递一个包含以下值的对象文字数组： -->
+    </canvas>
+    <button (click)="newDataPoint([900, 50, 300], 'May')">
+      Add data point
+    </button>
+  </div>
 </div>
+
 
 <div class="container">
   <h1>Time: {{ time$ | async | date:'mediumTime' }}</h1>
   <h5 appGoWild>-------------------------------------------------------------------------------------------------</h5>
+</div>
+
+<div class="container">
+  <label for="min">Min value:</label>
+  <input id="min" type="number" [(ngModel)]="settings.min">
+
+  <label for="max">Max value:</label>
+  <input id="max" type="number" [(ngModel)]="settings.max">
+
+  <label for="step">Step value:</label>
+  <input id="step" type="number" [(ngModel)]="settings.step">
+
+
+  <fancy-counter [min]="settings.min" [max]="settings.max" [step]="settings.step" (maxReached)="handleMaxReached()" (minReached)="handleMinReached()">
+  </fancy-counter>
+
+  <p *ngIf="msg && msg.length">
+    {{ msg }}
+  </p>
 </div>
 <router-outlet></router-outlet>

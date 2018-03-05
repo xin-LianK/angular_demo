@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+
+import './components/fancy-counter';
 
 // 动画必要模块
 import { BrowserModule } from '@angular/platform-browser';
@@ -50,5 +52,6 @@ import { ChartsModule } from 'ng2-charts';
   providers: [],//一旦它们提供，它们将在应用中的任何地方都可用。
   bootstrap: [AppComponent],//这是为了定义根组件，通常称为AppComponent。这意味着引导程序应该只包含一个成员，并且它应该仅在主应用程序模块中定义。
   entryComponents: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

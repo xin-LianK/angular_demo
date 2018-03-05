@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, isDevMode } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, isDevMode} from '@angular/core';
 
 import { ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { BaconDirective } from './bacon.directive';
@@ -87,6 +87,29 @@ export class AppComponent implements AfterViewInit {
     console.log(event);
   }
 
+  msg: string;
+
+  settings = {
+    min: 0,
+    max: 10,
+    step: 1
+  };
+
+  handleMaxReached() {
+    this.showMsg("Hold your horses! You're trying to go too high!");
+  }
+
+  handleMinReached() {
+    this.showMsg("Can't go any lower!");
+  }
+
+  private showMsg(message: string) {
+    this.msg = message;
+
+    setTimeout(() => {
+      this.msg = null;
+    }, 2000);
+  }
   constructor(
     private capitalize: CapitalizePipe,
     private location: Location,

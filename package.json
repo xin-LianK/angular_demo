@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
+    "@webcomponents/webcomponentsjs": "^1.1.0",
     "apollo-angular": "^1.0.1",
     "apollo-client": "^2.2.5",
     "chart.js": "^2.7.2",
