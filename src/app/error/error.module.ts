@@ -5,14 +5,17 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorRoutingModule } from './error-routing.module';
 
+import { CoreModule } from '../core/core.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    ErrorRoutingModule
+    ErrorRoutingModule,
+    CoreModule
   ],
   declarations: [ErrorComponent,
     ForbiddenComponent,
     NotFoundComponent
-]
+  ]
 })
 export class ErrorModule { }

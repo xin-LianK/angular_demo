@@ -20,15 +20,17 @@ import { CapitalizePipe } from './capitalize.pipe';
 import { BaconDirective } from './bacon.directive';
 import { GoWildDirective } from './go-wild.directive';
 
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [//这是为了指定应该是模块一部分的组件，管道和指令。
     AppComponent,
     ReverseStrPipe,
     CapitalizePipe,
-    BaconDirective,
+    BaconDirective
+    ,
     GoWildDirective
-],
+  ],
   imports: [//这是为了导入其他导出成员的模块，这些模块是作为NgModule一部分的组件的模板中使用的
     AppRoutingModule,
     BrowserModule,
@@ -39,6 +41,7 @@ import { GoWildDirective } from './go-wild.directive';
     FlexLayoutModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    CoreModule.forRoot(),
   ],
   exports: [NgbModule],//如果您想导出模块的成员，以便它们可以在其他模块的组件模板中使用，则这些成员将进入exports数组。
   providers: [],//一旦它们提供，它们将在应用中的任何地方都可用。
