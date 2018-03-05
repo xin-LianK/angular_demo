@@ -54,7 +54,7 @@
   <br />
   <h1 class="text-danger">angular中的一些常用数据绑定</h1>
   <div class="alert alert-primary" role="alert">
-    <strong>插值</strong>}
+    <strong>插值</strong>
   </div>
   <p>User name:{{ userName }}</p>
 
@@ -67,21 +67,21 @@
   <p>{{ user!.preferences!.nickName | uppercase }}</p>
 
   <div class="alert alert-primary" role="alert">
-    <strong>属性绑定</strong>}
+    <strong>属性绑定</strong>
   </div>
   <input type="text" [value]="user.name">
   <div class="alert alert-primary" role="alert">
-    <strong>事件绑定</strong>}
+    <strong>事件绑定</strong>
   </div>
   <button class="btn btn-primary" (click)="alert()"></button>
 
   <div class="alert alert-primary" role="alert">
-    <strong>双向绑定</strong>}
+    <strong>双向绑定</strong>
   </div>
   <input type="text" [(ngModel)]="user.name">
 
   <div class="alert alert-primary" role="alert">
-    <strong>样式绑定</strong>}
+    <strong>样式绑定</strong>
   </div>
   <p [style.background-color]="'pink'">{{ user.name }}</p>
 
@@ -94,7 +94,7 @@
   padding: '2rem' }; -->
 
   <div class="alert alert-primary" role="alert">
-    <strong>类属性绑定</strong>}
+    <strong>类属性绑定</strong>
   </div>
   <p [class.highlight]="user.color">{{ user.name }}</p>
 
@@ -111,13 +111,13 @@
   </button>
   <p>{{color.value}}</p>
   <div class="alert alert-primary" role="alert">
-    <strong>管道</strong>}
+    <strong>管道</strong>
   </div>
   <p>
     Published: {{ publishedDate | date:'fullDate' }}
   </p>
   <div class="alert alert-primary" role="alert">
-    <strong>结构指令</strong>}
+    <strong>结构指令</strong>
   </div>
   <p *ngIf="publishedDate">
     Published: {{ publishedDate | date:'fullDate' }}
@@ -141,9 +141,7 @@
       {{ i + 1 }}- name: {{ user.name }}, email: {{ user.email }}
     </li>
   </ul>
-  <div class="alert alert-primary" role="alert">
-    <strong>primary</strong>}
-  </div>
+
   <div [ngSwitch]="user.gender">
     <span *ngSwitchCase="'m'">Male</span>
     <span *ngSwitchCase="'f'">Female</span>
