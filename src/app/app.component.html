@@ -82,6 +82,8 @@
 </div>
 <span appBacon>sandwich!</span>
 <input class="form-control" #someInput placeholder="Your favorite pizza toping">
-
-<h1>Time: {{ time$ | async | date:'mediumTime' }}</h1>
+<div class="container">
+  <h1>Time: {{ time$ | async | date:'mediumTime' }}</h1>
+  <h5 appGoWild>-------------------------------------------------------------------------------------------------</h5>
+</div>
 <router-outlet></router-outlet>

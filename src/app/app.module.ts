@@ -18,6 +18,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { ReactiveFormsModule } from '@angular/forms';  // <-- 使用FormControl必须 import module
 import { CapitalizePipe } from './capitalize.pipe';
 import { BaconDirective } from './bacon.directive';
+import { GoWildDirective } from './go-wild.directive';
 
 
 @NgModule({
@@ -25,8 +26,9 @@ import { BaconDirective } from './bacon.directive';
     AppComponent,
     ReverseStrPipe,
     CapitalizePipe,
-    BaconDirective
-  ],
+    BaconDirective,
+    GoWildDirective
+],
   imports: [//这是为了导入其他导出成员的模块，这些模块是作为NgModule一部分的组件的模板中使用的
     AppRoutingModule,
     BrowserModule,
