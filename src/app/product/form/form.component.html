@@ -46,3 +46,106 @@
   <p>ng-dirty / ng-pristine：如果字段值被用户更改，则为ng-dirty，否则为ng-pristine。</p>
   <p>ng-touched / ng-untouched:NG-触摸和如果字段已经集中然后模糊（用户访问它）和NG-不变否则。</p>
 </div>
+
+
+<div class="container">
+  <br />
+  <br />
+  <br />
+  <h1 class="text-danger">angular中的一些常用数据绑定</h1>
+  <div class="alert alert-primary" role="alert">
+    <strong>插值</strong>}
+  </div>
+  <p>User name:{{ userName }}</p>
+
+  <p>Hello {{ 1 + 1 === 3? 'me' : 'you' }}</p>
+  <!-- 可以防止JavaScript引擎在尝试访问空或未定义对象上的值时抱怨。当您尝试访问的属性为null或未定义的值时，该语句将被简单忽略而不会导致错误： -->
+  <p>{{ user?.preferences?.avatar }}</p>
+
+  <p>{{ user?.name | uppercase }}</p>
+
+  <p>{{ user!.preferences!.nickName | uppercase }}</p>
+
+  <div class="alert alert-primary" role="alert">
+    <strong>属性绑定</strong>}
+  </div>
+  <input type="text" [value]="user.name">
+  <div class="alert alert-primary" role="alert">
+    <strong>事件绑定</strong>}
+  </div>
+  <button class="btn btn-primary" (click)="alert()"></button>
+
+  <div class="alert alert-primary" role="alert">
+    <strong>双向绑定</strong>}
+  </div>
+  <input type="text" [(ngModel)]="user.name">
+
+  <div class="alert alert-primary" role="alert">
+    <strong>样式绑定</strong>}
+  </div>
+  <p [style.background-color]="'pink'">{{ user.name }}</p>
+
+  <p [style.background-color]="user.color">{{ user.name }}</p>
+
+  <p [ngStyle]="userStyles">
+    {{ user.name }}
+  </p>
+  <!-- userStyles = { backgroundColor: 'papayawhip', border: '2px solid #666', width: '50%', margin: '0 auto', textAlign: 'center',
+  padding: '2rem' }; -->
+
+  <div class="alert alert-primary" role="alert">
+    <strong>类属性绑定</strong>}
+  </div>
+  <p [class.highlight]="user.color">{{ user.name }}</p>
+
+  <p [ngClass]="setClasses()">
+    {{ user.name }}
+  </p>
+
+  <!-- setClasses() { const classes = { 'has-avatar': this.user.avatar, 'new-user': this.user.newUser, bg: this.user.preferences.color
+  }; return classes; } -->
+
+  <input class="form-control" type="text" #color placeholder="Hex color value" [style.border-color]='color.value' placeholder="边框颜色">
+  <button (click)="printValue(color.value)">
+    Show color
+  </button>
+  <p>{{color.value}}</p>
+  <div class="alert alert-primary" role="alert">
+    <strong>管道</strong>}
+  </div>
+  <p>
+    Published: {{ publishedDate | date:'fullDate' }}
+  </p>
+  <div class="alert alert-primary" role="alert">
+    <strong>结构指令</strong>}
+  </div>
+  <p *ngIf="publishedDate">
+    Published: {{ publishedDate | date:'fullDate' }}
+  </p>
+
+  <p *ngIf="publishedDate; else noPublishedDate">
+    Published: {{ publishedDate | date:'fullDate' }}
+  </p>
+  <ng-template #noPublishedDate>
+    😿 No published date
+  </ng-template>
+
+  <ul>
+    <li *ngFor="let user of users">
+      name: {{ user.name }}, email: {{ user.email }}
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let user of users; index as i">
+      {{ i + 1 }}- name: {{ user.name }}, email: {{ user.email }}
+    </li>
+  </ul>
+  <div class="alert alert-primary" role="alert">
+    <strong>primary</strong>}
+  </div>
+  <div [ngSwitch]="user.gender">
+    <span *ngSwitchCase="'m'">Male</span>
+    <span *ngSwitchCase="'f'">Female</span>
+    <span *ngSwitchDefault>Not provided</span>
+  </div>
