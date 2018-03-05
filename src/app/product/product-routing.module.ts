@@ -5,6 +5,7 @@ import { ProductComponent } from './product.component';
 import { IndexComponent } from './index/index.component';
 import { CategoryComponent } from './category/category.component';
 import { ListComponent } from './list/list.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: ListComponent
+      },
+      {
+        path: 'form',
+        component: FormComponent
       },
       {
         path: '',

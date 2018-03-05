@@ -6,6 +6,7 @@ import { CategoryComponent } from './category/category.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
 import { ListComponent } from './list/list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,9 @@ import { ListComponent } from './list/list.component';
   ],
   declarations: [ProductComponent,
     IndexComponent,
-    CategoryComponent,
-    ListComponent
+    CategoryComponent,
+    ListComponent,
+    FormComponent
 ]
 })
 export class ProductModule { }

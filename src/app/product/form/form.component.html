@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- Angular自动将一个ngForm指令附加到HTML表单元素，但是通过这个，我们给了我们的表单一个模板引用名称，以便于访问它的值和有效性。 -->
+  <form #newUserForm='ngForm' (ngSubmit)="onSubmit(newUserForm)">
+    <!-- 对于模板驱动的表单，每个字段的有效性由标准HTML5有效性属性（如必需的，最大长度或模式）控制。每个表单字段可以是有效的或无效的，只有当每个字段有效时，表单才是有效的。 -->
+    <input class="form-control" type="text" placeholder="User name" required maxlength="25" [(ngModel)]="userName" name="userName"
+      #pickedName="ngModel">
+    <!-- 可以使用这些引用来访问这些字段的值或有效性。 -->
+    <div *ngIf="!pickedName.valid && pickedName.touched">
+      <!-- 使用特定字段的模板引用，我们可以根据字段的状态（有效，原始，触及）在模板中设置显示的消息（ngIf）。原始的，如果当领域的价值没有被改变，并且被触及的是当领域被聚焦然后不聚焦。 -->
+      User name is required!
+    </div>
+
+    <input class="form-control" type="email" placeholder="Email" required [(ngModel)]="email" name="email" #userEmail="ngModel">
+    <div *ngIf="!userEmail.valid && userEmail.touched">
+      Email is required!
+    </div>
+
+    <input class="form-control" type="text" placeholder="Nick name" required [(ngModel)]="nickName" name="nickName">
+
+    <input class="form-control" type="password" placeholder="Password" required [(ngModel)]="password" name="password" #userPassword="ngModel">
+    <div *ngIf="!userPassword.valid && userPassword.touched">
+      Password is required!
+    </div>
+
+    <!-- 表单整体无效时，我们绑定到提交按钮的禁用属性以禁用按钮。 -->
+    <button class="btn btn-primary" type="submit" [disabled]="!newUserForm.form.valid">
+      Register
+    </button>
+    <!-- 表单可以通过调用reset（）方法来重置。 -->
+    <button class="btn btn-danger" type="button" (click)="newUserForm.reset()">
+      Reset
+    </button>
+  </form>
+
+  <br />
+  <br />
+  <br />
+
+  <pre>{{ newUserForm.form.value | json }}</pre>
+  <!-- Value of whole form -->
+  <pre>User name: {{ pickedName.value }}</pre>
+  <!-- Value of userName field -->
+  <pre>Valid form? {{ newUserForm.form.valid | json }}</pre>
+  <!-- Validity of whole form -->
+  <p>ng-invalid / ng-valid：如果该字段不符合指定的有效性要求，则为ng-invalid，否则为ng-valid。</p>
+  <p>ng-dirty / ng-pristine：如果字段值被用户更改，则为ng-dirty，否则为ng-pristine。</p>
+  <p>ng-touched / ng-untouched:NG-触摸和如果字段已经集中然后模糊（用户访问它）和NG-不变否则。</p>
+</div>
