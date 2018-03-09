@@ -25,6 +25,7 @@ import { GoWildDirective } from './go-wild.directive';
 import { CoreModule } from './core/core.module';
 
 import { ChartsModule } from 'ng2-charts';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [//这是为了指定应该是模块一部分的组件，管道和指令。
@@ -49,7 +50,7 @@ import { ChartsModule } from 'ng2-charts';
     // CoreModule.forRoot(),
   ],
   exports: [NgbModule],//如果您想导出模块的成员，以便它们可以在其他模块的组件模板中使用，则这些成员将进入exports数组。
-  providers: [],//一旦它们提供，它们将在应用中的任何地方都可用。
+  providers: [DataService],//一旦它们提供，它们将在应用中的任何地方都可用。
   bootstrap: [AppComponent],//这是为了定义根组件，通常称为AppComponent。这意味着引导程序应该只包含一个成员，并且它应该仅在主应用程序模块中定义。
   entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

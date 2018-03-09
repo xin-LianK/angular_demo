@@ -18,6 +18,8 @@ import 'rxjs/add/operator/map';
 
 import { environment } from '../environments/environment';
 
+// import { DataService } from './data.service';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,7 +30,7 @@ import { environment } from '../environments/environment';
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
-    }
+    },
   ],
   encapsulation: ViewEncapsulation.None
 })
@@ -37,7 +39,7 @@ export class AppComponent implements AfterViewInit {
   data: string;
   routeData: any;
   isRoot: boolean;
-
+  users: any;
   extraIngredient: string;
   @ViewChild(BaconDirective)
   @ViewChild('someInput') someInput: ElementRef;
@@ -111,12 +113,33 @@ export class AppComponent implements AfterViewInit {
       this.msg = null;
     }, 2000);
   }
+
+  // private populateUsers() {
+  //   this.dataService.getData().subscribe((event: HttpEvent<any>) => {
+  //     switch (event.type) {
+  //       case HttpEventType.Sent:
+  //         console.log('Request sent!')
+  //         break;
+  //       case HttpEventType.ResponseHeader:
+  //         console.log('Response header received!');
+  //         break;
+  //       case HttpEventType.DownloadProgress:
+  //         const kbLoaded = Math.round(event.loaded / 1024);
+  //         console.log(`Download in progress! ${kbLoaded}Kb loaded`);
+  //         break;
+  //       case HttpEventType.Response:
+  //         console.log('😺 Done!', event.body);
+  //         this.users = event.body;
+  //     }
+  //   })
+  // }
   constructor(
     private capitalize: CapitalizePipe,
     private location: Location,
     private router: Router,
     private route: ActivatedRoute,
-    private title: Title
+    private title: Title,
+    // private dataService: DataService
   ) {
     route.data.subscribe(d => {
       this.title.setTitle(d['title']);
@@ -125,6 +148,7 @@ export class AppComponent implements AfterViewInit {
 
   // 监听url中的更改，并且如果用户位于根路径中
   ngOnInit() {
+    // this.populateUsers();
     this.routeData = this.route.snapshot.data;
     if (isDevMode()) {
       console.log('👋 Development!');
