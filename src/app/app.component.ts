@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, isDevMode} from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, isDevMode } from '@angular/core';
 
 import { ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { BaconDirective } from './bacon.directive';
@@ -35,6 +35,7 @@ import { environment } from '../environments/environment';
 export class AppComponent implements AfterViewInit {
   panelColor = new FormControl('Router');
   data: string;
+  routeData: any;
   isRoot: boolean;
 
   extraIngredient: string;
@@ -124,7 +125,7 @@ export class AppComponent implements AfterViewInit {
 
   // 监听url中的更改，并且如果用户位于根路径中
   ngOnInit() {
-
+    this.routeData = this.route.snapshot.data;
     if (isDevMode()) {
       console.log('👋 Development!');
     } else {
