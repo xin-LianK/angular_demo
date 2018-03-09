@@ -18,8 +18,8 @@ import {
   styleUrls: ['./help.component.css'],
   providers: [PopcornService],
   animations:[
-    trigger('animRoutes', [
-      transition('* <=> *', [
+    trigger('animRoutes', [//触发器应用于在应用程序组件模板中封装路由器插座的div。
+      transition('* <=> *', [//然后我们将任何状态的转换定义为任何状态（'* <=> *'），以便每个路由更改生成相同的动画。我们可以为不同的状态定义多个转换。例如，从第一页到第二页：'one => two'，或者从第二页到第一页：'two => one'。
         group([
           query(
             ':enter',
@@ -34,7 +34,7 @@ import {
               ),
               animateChild()
             ],
-            { optional: true }
+            { optional: true }//我们将{ optional：true}添加到我们的查询组中，以便在没有任何内容需要查询时Angular不会跳闸。
           ),
           query(
             ':leave',
