@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { HnResolver } from './hn.resolver';
+// import { HnResolver } from './hn.resolver';
 
 const routes: Routes = [
   {
@@ -13,8 +13,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomeModule',
-    resolve: { message: HnResolver }
+    loadChildren: './home/home.module#HomeModule'
+    // resolve: { message: HnResolver }
   },
   {
     path: 'account',
@@ -49,7 +49,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [HnResolver]
+  // providers: [HnResolver]
 })
 
 export class AppRoutingModule {

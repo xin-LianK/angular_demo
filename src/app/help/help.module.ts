@@ -7,11 +7,13 @@ import { HelpRoutingModule } from './help-routing.module';
 import { UserPipe } from './user.pipe';
 import { ContantComponent } from './contant/contant.component';
 import { ShadowDirective } from './shadow.directive';
+import { SosComponent } from './sos/sos.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
-    HelpRoutingModule
+    HelpRoutingModule,
   ],
   declarations: [
     HelpComponent,
@@ -19,7 +21,8 @@ import { ShadowDirective } from './shadow.directive';
     AboutComponent,
     UserPipe,
     ContantComponent,
-    ShadowDirective
+    ShadowDirective,
+    SosComponent
 ]
 })
 export class HelpModule { }

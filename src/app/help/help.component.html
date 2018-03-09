@@ -1,18 +1,25 @@
 <h1 class="text-info">
   局部路由</h1>
-<div class="btn-group">
-  <button class="btn btn-lg" routerLink='/help/about'>
-    跳转到
-    <span class="badge badge-primary">about</span>
-  </button>
-  <button class="btn btn-lg" routerLink='/help/qaq'>
-    飞到
-    <span class="badge badge-success">qaq</span>
-  </button>
-</div>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
+
+ 
+  <div class="main container" [@animRoutes]="getPage(appOutlet)">
+    <div class="btn-group">
+      <button class="btn btn-lg" routerLink='/help/about'>
+        跳转到
+        <span class="badge badge-primary">about</span>
+      </button>
+      <button class="btn btn-lg" routerLink='/help/qaq'>
+        飞到
+        <span class="badge badge-success">qaq</span>
+      </button>
+      <button class="btn btn-lg" routerLink='/help/sos'>
+        蹦跶到
+        <span class="badge badge-danger">sos</span>
+      </button>
+    </div>
+    <router-outlet #appOutlet="outlet"></router-outlet>
+  </div>
 
 
 <br />

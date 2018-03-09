@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HelpComponent } from './help.component';
 import { AboutComponent } from './about/about.component';
 import { QaqComponent } from './qaq/qaq.component';
+import { SosComponent } from './sos/sos.component';
 
 const routes: Routes = [
   {
@@ -11,11 +12,19 @@ const routes: Routes = [
     children: [
       {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
+        data:{page:'one'}
       },
       {
         path: 'qaq',
-        component: QaqComponent
+        component: QaqComponent,
+        data: { page: 'two' }
+        
+      },
+      {
+        path: 'sos',
+        component: SosComponent,
+        data: { page: 'three' }
       },
       {
         path: '',
@@ -36,5 +45,6 @@ export class HelpRoutingModule { }
 export const routedComponent = [
   HelpComponent,
   AboutComponent,
-  QaqComponent
+  QaqComponent,
+  SosComponent
 ];
