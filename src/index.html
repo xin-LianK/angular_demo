@@ -84,6 +84,13 @@
     <div class="swiper-pagination"></div>
   </div> -->
 </body>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript">
+  var stripe = Stripe('pk_test_XXXXXXXXXXXXXXXXX'); // use your test publishable key
+  var elements = stripe.elements();
+
+</script>
 <script>
   var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
