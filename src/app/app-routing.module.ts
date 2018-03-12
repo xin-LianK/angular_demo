@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'material',
     pathMatch: 'full'
   },
   {
